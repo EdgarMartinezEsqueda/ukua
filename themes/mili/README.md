@@ -19,3 +19,7 @@ Salir del perfil sin motivo aparente
 
 ## Documentación
 Página oficial del tema: https://www.drupar.com/mili-documentation
+
+# Por hacer:
+- Modificar las plantillas para la página del perfil del usuario
+- Modificar las platillas de los comentarios, son excesivamente grandes
