@@ -2,6 +2,7 @@
 Si se descarga el repositorio y se intenta ejecutar en su localhost, este no funcionará por dos principales motivos
 - Necesita la base de datos que ya está ligada al proyecto
 - El dominio no será el mismo
+
 Por lo tanto, si desea ver el proyecto en ejecución visite la pagina [aquí](https://www.ukua.xyz)
 
 
