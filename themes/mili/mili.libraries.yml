@@ -59,3 +59,12 @@ maintenance:
   css:
     theme:
       css/maintenance.css: {}
+
+#Para una próxima implementación de un boton para compartir
+share:
+  version: 1.0
+  css:
+    component:
+      css/share.css: {}
+  js:
+    js/share.js: {}
