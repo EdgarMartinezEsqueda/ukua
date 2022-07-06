@@ -556,3 +556,721 @@
 #17 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(708): Stack\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
 #18 /home/u692838125/domains/ukua.xyz/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
 #19 {main}
+[25-Jan-2022 16:21:50 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 27529888361f077f18c17c5.25291342
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[02-Mar-2022 16:30:32 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1646260164)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1646260164)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1646260164)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[02-Mar-2022 16:30:32 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1591710486621fefef8c1e55.42799363
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[03-Mar-2022 15:21:40 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1646342455)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1646342455)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1646342455)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#16 {main}
+[03-Mar-2022 15:21:40 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 10592983976221314c58a392.90690702
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[05-Mar-2022 19:24:31 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 48156857062240d4fc90d02.64057999
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[06-Mar-2022 02:06:02 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1646553936)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1646553936)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1646553936)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[06-Mar-2022 02:06:02 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 109880684462246b50ee6ff0.71393781
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[12-Mar-2022 08:15:49 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1647094510)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1647094510)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1647094510)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#16 {main}
+[12-Mar-2022 08:15:49 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1256275353622caafa723985.27262925
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[12-Mar-2022 22:29:44 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1647145738)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1647145738)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1647145738)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Routing\LocalRedirectResponse))
+#16 {main}
+[12-Mar-2022 22:29:44 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1461565973622d731ff094c0.24010437
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[14-Mar-2022 11:05:27 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 563201569622f75d732b1d0.61402649
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[14-Mar-2022 18:34:02 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1647304412)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1647304412)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1647304412)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[14-Mar-2022 18:34:02 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1940521325622fdedd6e4824.68260150
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[17-Mar-2022 06:10:36 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 7505181686233253b8f7590.81106566
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[25-Mar-2022 23:28:17 America/Mexico_City] Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: SELECT 1 AS "expression"
+FROM
+"kfxx_key_value" "key_value"
+WHERE ("name" = :db_condition_placeholder_0) AND ("collection" = :db_condition_placeholder_1); Array
+(
+    [:db_condition_placeholder_0] => system.cron_last
+    [:db_condition_placeholder_1] => state
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php on line 136 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Connection.php(977): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Select.php(512): Drupal\Core\Database\Connection->query('SELECT 1 AS "ex...', Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Merge.php(378): Drupal\Core\Database\Query\Select->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(136): Drupal\Core\Database\Query\Merge->execute()
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/KeyValueStore/DatabaseStorage.php(149): Drupal\Core\KeyValueStore\DatabaseStorage->doSet('system.cron_las...', 1648272469)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/State/State.php(84): Drupal\Core\KeyValueStore\DatabaseStorage->set('system.cron_las...', 1648272469)
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(161): Drupal\Core\State\State->set('system.cron_las...', 1648272469)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Cron.php(137): Drupal\Core\Cron->setCronLastTime()
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/ProxyClass/Cron.php(75): Drupal\Core\Cron->run()
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/modules/automated_cron/src/EventSubscriber/AutomatedCron.php(65): Drupal\Core\ProxyClass\Cron->run()
+#10 [internal function]: Drupal\automated_cron\EventSubscriber\AutomatedCron->onTerminate(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/EventDispatcher/ContainerAwareEventDispatcher.php(142): call_user_func(Array, Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...', Object(Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher))
+#12 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(100): Drupal\Component\EventDispatcher\ContainerAwareEventDispatcher->dispatch(Object(Symfony\Component\HttpKernel\Event\TerminateEvent), 'kernel.terminat...')
+#13 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(32): Symfony\Component\HttpKernel\HttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(686): Stack\StackedHttpKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#15 /home/u692838125/domains/ukua.xyz/public_html/index.php(22): Drupal\Core\DrupalKernel->terminate(Object(Symfony\Component\HttpFoundation\Request), Object(Drupal\Core\Render\HtmlResponse))
+#16 {main}
+[25-Mar-2022 23:28:17 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1875601117623ea4558d8816.06211273
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[31-Mar-2022 03:05:27 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 157562890162456ed6a48792.17353066
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[09-Apr-2022 12:09:04 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1500595226251bdb0c1de10.69097987
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[16-Apr-2022 20:01:58 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 2077116228625b6706100672.98898288
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[16-Apr-2022 23:04:45 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1089958762625b91dd1c9bf3.73674273
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[17-Apr-2022 03:02:26 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 731360066625bc992c6efb8.52363926
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[18-Apr-2022 16:48:33 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 526863136625ddcb1b28491.32152459
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[20-Apr-2022 17:21:28 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 17972358326260876803eac2.54311229
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[24-Apr-2022 10:01:59 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 151280647962656667025762.35714262
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[25-Apr-2022 03:45:43 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 29351042562665fb70e3168.67993137
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[28-Apr-2022 20:38:14 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 1508570643626b4185cd42e0.20918802
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[05-May-2022 21:29:23 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 76678957762748802041355.15632026
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[16-May-2022 22:12:28 UTC] Uncaught PHP Exception Exception: "Object of type Drupal\Core\Field\FieldItemList cannot be printed." at /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Template/TwigExtension.php line 454
+[16-May-2022 22:13:12 UTC] Uncaught PHP Exception Exception: "Object of type Drupal\Core\Field\FieldItemList cannot be printed." at /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Template/TwigExtension.php line 454
+[16-May-2022 22:13:23 UTC] Uncaught PHP Exception Exception: "Object of type Drupal\Core\Field\FieldItemList cannot be printed." at /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Template/TwigExtension.php line 454
+[16-May-2022 22:15:22 UTC] Uncaught PHP Exception Exception: "Object of type Drupal\Core\Field\FieldItemList cannot be printed." at /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Template/TwigExtension.php line 454
+[16-May-2022 22:15:27 UTC] Uncaught PHP Exception Exception: "Object of type Drupal\Core\Field\FieldItemList cannot be printed." at /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Template/TwigExtension.php line 454
+[18-May-2022 06:45:10 America/Mexico_City] PDOException: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute. in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php:145
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/StatementWrapper.php(145): PDOStatement->execute(Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(57): Drupal\Core\Database\StatementWrapper->execute(Array, Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#3 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#4 [internal function]: _drupal_shutdown_function()
+#5 {main}
+
+Next Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.: DELETE FROM "kfxx_semaphore" 
+WHERE "value" = :db_condition_placeholder_0; Array
+(
+    [:db_condition_placeholder_0] => 11174015046284dc465cdce7.67793890
+)
+ in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/ExceptionHandler.php:53
+Stack trace:
+#0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Query/Delete.php(61): Drupal\Core\Database\Driver\mysql\ExceptionHandler->handleExecutionException(Object(PDOException), Object(Drupal\Core\Database\StatementWrapper), Array, Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Lock/DatabaseLockBackend.php(170): Drupal\Core\Database\Query\Delete->execute()
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/includes/bootstrap.inc(733): Drupal\Core\Lock\DatabaseLockBackend->releaseAll()
+#3 [internal function]: _drupal_shutdown_function()
+#4 {main}
+[18-May-2022 17:02:48 UTC] Error: Class 'Doctrine\Common\Util\Debug' not found in /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Plugin/Devel/Dumper/DoctrineDebug.php on line 25 #0 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Plugin/Devel/Dumper/DoctrineDebug.php(57): Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug->export(Object(Drupal\user\Entity\User))
+#1 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/DevelDumperManager.php(133): Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug->exportAsRenderable(Object(Drupal\user\Entity\User), NULL)
+#2 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Controller/EntityDebugController.php(88): Drupal\devel\DevelDumperManager->exportAsRenderable(Object(Drupal\user\Entity\User))
+#3 [internal function]: Drupal\devel\Controller\EntityDebugController->entityLoad(Object(Drupal\Core\Routing\RouteMatch))
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array(Array, Array)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Render/Renderer.php(564): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext(Array, Array)
+#8 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(158): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#9 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(80): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#10 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/u692838125/domains/ukua.xyz/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/u692838125/domains/ukua.xyz/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(708): Stack\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/u692838125/domains/ukua.xyz/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#19 {main}
+[18-May-2022 17:02:52 UTC] Error: Class 'Doctrine\Common\Util\Debug' not found in /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Plugin/Devel/Dumper/DoctrineDebug.php on line 25 #0 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Plugin/Devel/Dumper/DoctrineDebug.php(57): Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug->export(Object(Drupal\user\Entity\User))
+#1 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/DevelDumperManager.php(133): Drupal\devel\Plugin\Devel\Dumper\DoctrineDebug->exportAsRenderable(Object(Drupal\user\Entity\User), NULL)
+#2 /home/u692838125/domains/ukua.xyz/public_html/modules/devel/src/Controller/EntityDebugController.php(88): Drupal\devel\DevelDumperManager->exportAsRenderable(Object(Drupal\user\Entity\User))
+#3 [internal function]: Drupal\devel\Controller\EntityDebugController->entityLoad(Object(Drupal\Core\Routing\RouteMatch))
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(123): call_user_func_array(Array, Array)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Render/Renderer.php(564): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(124): Drupal\Core\Render\Renderer->executeInRenderContext(Object(Drupal\Core\Render\RenderContext), Object(Closure))
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/EventSubscriber/EarlyRenderingControllerWrapperSubscriber.php(97): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext(Array, Array)
+#8 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(158): Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}()
+#9 /home/u692838125/domains/ukua.xyz/public_html/vendor/symfony/http-kernel/HttpKernel.php(80): Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object(Symfony\Component\HttpFoundation\Request), 1)
+#10 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/Session.php(58): Symfony\Component\HttpKernel\HttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/KernelPreHandle.php(48): Drupal\Core\StackMiddleware\Session->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#12 /home/u692838125/domains/ukua.xyz/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(106): Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#13 /home/u692838125/domains/ukua.xyz/public_html/core/modules/page_cache/src/StackMiddleware/PageCache.php(85): Drupal\page_cache\StackMiddleware\PageCache->pass(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#14 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/ReverseProxyMiddleware.php(48): Drupal\page_cache\StackMiddleware\PageCache->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#15 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/StackMiddleware/NegotiationMiddleware.php(51): Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#16 /home/u692838125/domains/ukua.xyz/public_html/vendor/stack/builder/src/Stack/StackedHttpKernel.php(23): Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#17 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(708): Stack\StackedHttpKernel->handle(Object(Symfony\Component\HttpFoundation\Request), 1, true)
+#18 /home/u692838125/domains/ukua.xyz/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#19 {main}
+[19-May-2022 19:01:43 UTC] PDOException: SQLSTATE[HY000] [2006] MySQL server has gone away in /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(190): PDO->__construct('mysql:host=127....', 'u692838125_I2HZ...', '29vA9rmp6A', Array)
+#1 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Database.php(387): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/Container.php(176): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Component/DependencyInjection/Container.php(176): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(549): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(894): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(472): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /home/u692838125/domains/ukua.xyz/public_html/core/lib/Drupal/Core/DrupalKernel.php(707): Drupal\Core\DrupalKernel->boot()
+#13 /home/u692838125/domains/ukua.xyz/public_html/index.php(19): Drupal\Core\DrupalKernel->handle(Object(Symfony\Component\HttpFoundation\Request))
+#14 {main}
