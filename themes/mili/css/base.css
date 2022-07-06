@@ -804,3 +804,13 @@ h2.footerExplora { color: #EEEEEE !important; }
 .breadcrumb { text-shadow: none !important; }
 .textoPrivacidad { background: var(--border-color) !important;    color: black !important;    text-shadow: none !important;    padding: 20px !important; }
 .privacidadContenido {     padding: 20px !important; } 
+
+.cntBienvenida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textBienvenida{
+    font-size: larger;
+}
