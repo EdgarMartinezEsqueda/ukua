@@ -21,5 +21,13 @@ Salir del perfil sin motivo aparente
 Página oficial del tema: https://www.drupar.com/mili-documentation
 
 # Por hacer:
-- Modificar las plantillas para la página del perfil del usuario
-- Modificar las platillas de los comentarios, son excesivamente grandes
+- ~~Modificar las plantillas para la página del perfil del usuario~~
+- ~~Modificar las platillas de los comentarios, son excesivamente grandes~~
+
+# Que hay de nuevo:
+- Modificación de plantilla del perfil del usario:
+  - Muestra Foto de perfil, nombre de usuario, tipo de cuenta, CV y el contenido que ha publicado.
+- Creación de plantillas para las ofertas y búsquedas de empleo.
+- Se creó una página para los errores 404.
+- Modificación de los comentarios, ahora muestra la foto de perfil del usuario que comentó.
+- Creación de las diversas plantillas.
