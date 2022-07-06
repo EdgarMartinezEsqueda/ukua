@@ -1,0 +1,16 @@
+div#block-bienvenidoaukua{
+    padding: 5%;
+}
+
+div#block-bienvenidoaukua:after {
+    content: "";
+    position: absolute;
+    height: calc(100% + 60px);
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: #EEEEEE; 
+    z-index: -1;
+    background-size: cover;
+}

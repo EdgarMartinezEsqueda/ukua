@@ -115,7 +115,7 @@
   border: 0;
   border-radius: 2px;
   padding: 9px 10px;
-  background-color: #d1392b;
+  background-color: #01afb8;
   color: #fff;
   -webkit-transition: background-color 0.4s ease;
   -moz-transition: background-color 0.4s ease;
@@ -151,7 +151,7 @@
 }
 .feature i,
 .service i {
-  color: #d1392b;
+  color: #272a49;
   transition: all linear 0.5s;
 }
 .feature .button,
@@ -161,7 +161,7 @@
 }
 .feature:hover,
 .service:hover {
-  background: #d1392b;
+  background: #01afb8;
   color: #ffffff;
   bottom: 10px;
 }

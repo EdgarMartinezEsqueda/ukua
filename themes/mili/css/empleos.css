@@ -1,0 +1,6 @@
+.empCntFlex{ display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
+.empCntFlex > * { padding: 15px; }
+.empCntFlex * { flex: 1 1 20em; }
+.empImg { width: 400px; margin: auto;}
+.empImg img { height: 100%; }
+.empPun pre { width: fit-content; }

@@ -1,0 +1,151 @@
+.material-icons.md-48 { font-size: 48px; }
+.contenidoHome { list-style: none; }
+a.footerEnlace{ color: white; }
+.page-header { padding: 7px 0; }
+#main { max-width: 1170px;}
+.field__label { color: midnightblue; font-weight: bold; }
+.node-view-mode-teaser { margin-bottom: 0 }
+.footer { background: var(--theme-color-two); }
+.footer a { color: white; }
+h2.footerExplora { color: #EEEEEE; }
+.breadcrumb { text-shadow: none; }
+:root {--theme-color: #00ADB5;    --theme-color-two: #393E46; }
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans"); .left-section .inner-content { position: absolute; top: 50%; transform: translateY(-50%); } .background404 { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(#0C0E10, #446182); } .background404 .ground { position: absolute; bottom: 0; width: 100%; height: 25vh; background: #0C0E10; } @media (max-width: 770px) { .background404 .ground { height: 0vh; } }
+
+.container404 { position: relative; margin: 0 auto; width: 85%; height: 100vh; padding-bottom: 25vh; display: flex; flex-direction: row; justify-content: space-around; } @media (max-width: 770px) { .container404 { flex-direction: column; padding-bottom: 0vh; } }
+
+.left-section, .right-section { position: relative; }
+
+.left-section { width: 40%; } @media (max-width: 770px) { .left-section { width: 100%; height: 40%; position: absolute; top: 0; } } @media (max-width: 770px) { .left-section .inner-content { position: relative; padding: 1rem 0; } }
+
+.heading404 { text-align: center; font-size: 9em; line-height: 1.3em; margin: 2rem 0 0.5rem 0; padding: 0; text-shadow: 0 0 1rem #fefefe; color: white; } @media (max-width: 770px) { .heading404 { font-size: 7em; line-height: 1.15; margin: 0; } }
+
+.subheading404 { text-align: center; max-width: 480px; font-size: 1.5em; line-height: 1.15em; padding: 0 1rem; color: #f5f6fa; margin: 0 auto; } @media (max-width: 770px) { .subheading404 { font-size: 1.3em; line-height: 1.15; max-width: 100%; } }
+
+.right-section { width: 50%; } @media (max-width: 770px) { .right-section { width: 100%; height: 60%; position: absolute; bottom: 0; } }
+
+.svgimg404 { position: absolute; bottom: 0; padding-top: 10vh; padding-left: 1vh; max-width: 100%; max-height: 100%; } @media (max-width: 770px) { .svgimg404 { padding: 0; } } .svgimg404 .bench-legs { fill: #0C0E10; } .svgimg404 .top-bench, .svgimg404 .bottom-bench { stroke: #0C0E10; stroke-width: 1px; fill: #5B3E2B; } .svgimg404 .bottom-bench path:nth-child(1) { fill: #432d20; } .svgimg404 .lamp-details { fill: #202425; } .svgimg404 .lamp-accent { fill: #2c3133; } .svgimg404 .lamp-bottom { fill: linear-gradient(#202425, #0C0E10); } .svgimg404 .lamp-light { fill: #EFEFEF; }
+
+@keyframes glow { 0% { text-shadow: 0 0 1rem #fefefe; } 50% { text-shadow: 0 0 1.85rem #ededed; } 100% { text-shadow: 0 0 1rem #fefefe; } }
+
+.textoPrivacidad { background: var(--border-color);    color: black;    text-shadow: none;    padding: 20px; }
+.privacidadContenido {     padding: 20px; } 
+
+.field--name-field-fotoperfil .field-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.field--name-field-fotoperfil .field-item .image-field {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-top: -90px;
+}
+
+.field--name-field-fotoperfil .field__label {
+    display: none;
+}
+
+.cntNacimiento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cntNacimiento .field--name-field-nacimiento .field-item {
+    margin-left: 10px;
+    color: #727272;
+}
+
+.cntNacimiento .field--name-field-nacimiento .field__label {
+    display: none;
+}
+
+.cntPrincipalPerfil .cntCV {
+    width: 35%;
+    display: flex;
+    order: -1;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.cntPrincipalPerfil .btnChido {
+    margin-top: -27.5px;
+    background-color: #1E88E5 !important;
+    width: 55.5px;
+    display: flex;
+    height: 55.5px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+}
+
+.ctnPrincipalPerfil .btnChido span {
+    font-size: 26px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cntPrincipalPerfil .nombrePerfil {
+    color: #212121;
+    font-size: 28px;
+    text-align: center;
+}
+
+.field--name-field-comentario .field__label {
+    display: none;
+}
+
+.empCntFlex{ display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
+.empCntFlex > * { padding: 15px; }
+.empCntFlex * { flex: 1 1 20em; }
+.empImg { width: 400px; margin: auto;}
+.empImg img { height: 100%; }
+.empPun pre { width: fit-content; }

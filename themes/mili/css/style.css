@@ -16,7 +16,7 @@
 #main-wrapper {
   position: relative;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 0 0;
 }
 
 .main-container {
@@ -90,7 +90,7 @@ h3.block-title {
 }
 
 .region-highlighted .block {
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 /*
@@ -282,7 +282,8 @@ ul.main-menu ul.submenu li a {
 }
 
 ul.main-menu ul.submenu li a:hover {
-  padding: 10px 10px 10px 14px;
+  /*padding: 10px 10px 10px 14px;*/
+  color: var(--theme-color);
 }
 
 li.expanded:hover ul.submenu,
@@ -791,7 +792,7 @@ ul.inline li {
 
 li.node-readmore a {
   padding: 6px 12px;
-  background: var(--theme-color);
+  background: #476072;
   color: #fff;
   -webkit-transition: background 0.4s ease;
   transition: background 0.4s ease;
@@ -869,7 +870,7 @@ nav.pager {
 /* Comments -> comment form. */
 .comment-form-wrap {
   position: relative;
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
   padding: 20px;
   background: #f5f4f0;
   border: 2px solid var(--border-color);
@@ -1303,7 +1304,7 @@ ol.search-results li {
   width: 60px;
   height: 2px;
   margin-left: -30px;
-  background: #d1392b;
+  background: #334257;
 }
 
 /*

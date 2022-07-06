@@ -29,7 +29,7 @@ h3.block-title {
   position: relative;
   width: 100%;
   margin: 0;
-  background: #d1392b;
+  background: #01afb8;
   z-index: 12;
 }
 .header > .container {
@@ -46,14 +46,14 @@ h3.block-title {
 .frontpage .header {
   width: 100%;
   padding: 0;
-  background: #d1392b url("../images/slider.jpg") center no-repeat;
+  background: #01afb8 url("../images/slider.jpg") center no-repeat;
   background-size: cover;
   overflow: hidden;
 }
 
 /* header -> maintenance-page header */
 .maintenance-page .header {
-  background: #d1392b;
+  background: #01afb8;
 }
 
 /* Header -> Header container for branding and main menu */
@@ -193,7 +193,8 @@ ul.main-menu ul.submenu li a {
   transition: all ease 0.3s;
 }
 ul.main-menu ul.submenu li a:hover {
-  padding: 10px 10px 10px 14px;
+  /*padding: 10px 10px 10px 14px;*/
+  color: var(--theme-color);
 }
 li.expanded:hover ul.submenu,
 li.collapsed:hover ul.submenu {
@@ -300,7 +301,7 @@ ul.main-menu li:hover > a {
 }
 .search-box-content input[type="submit"] {
   padding: 10px 20px;
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
 }
 .search-box-content input[type="submit"]:hover {
@@ -473,7 +474,7 @@ ol.breadcrumb-items li {
   left: 0;
   width: 60px;
   height: 2px;
-  background: #d1392b;
+  background: #01afb8;
 }
 .sidebar ul {
   margin: 0;
@@ -537,7 +538,7 @@ ul.page-tabs li a {
 }
 ul.page-tabs li.active-page-tab a,
 ul.page-tabs li a:hover {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
 }
 
@@ -615,11 +616,11 @@ ul.page-tabs li a:hover {
   color: #757575;
 }
 .node-submitted-details a:hover {
-  border-bottom: 1px dotted #d1392b;
+  border-bottom: 1px dotted #01afb8;
 }
 .node-submitted-details i {
   margin: 0 0 0 14px;
-  color: #d1392b;
+  color: #01afb8;
 }
 .node-submitted-details i.user-icon {
   margin-left: 0;
@@ -645,7 +646,7 @@ h3.term-title {
 }
 .term-title i {
   font-size: 1.1em;
-  color: #d1392b;
+  color: #01afb8;
 }
 ul.taxonomy-terms {
   margin: 1em 0 0.2em 0;
@@ -659,12 +660,12 @@ li.taxonomy-term {
 li.taxonomy-term a {
   padding: 4px 10px;
   background: #fff;
-  border: 1px dashed #d1392b;
+  border: 1px dashed #01afb8;
   border-radius: 4px;
   transition: all 0.4s ease;
 }
 li.taxonomy-term a:hover {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
 }
 .node-links-container ul.links {
@@ -710,7 +711,7 @@ ul.inline li {
 }
 li.node-readmore a {
   padding: 6px 12px;
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
   -webkit-transition: background 0.4s ease;
   -moz-transition: background 0.4s ease;
@@ -752,12 +753,12 @@ nav.pager {
 .pager__item a {
   padding: 8px 14px;
   background: #fff;
-  border: 1px dashed #d1392b;
+  border: 1px dashed #01afb8;
   border-radius: 4px;
 }
 .pager__item a:hover,
 .pager__item.is-active a {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
 }
 
@@ -770,7 +771,7 @@ nav.pager {
   border-top: 3px double #d6d6d6;
 }
 #node-comment i {
-  color: #d1392b;
+  color: #01afb8;
 }
 .comments-title i {
   font-size: 1em;
@@ -864,13 +865,13 @@ h3.single-comment-title {
 .comment-delete a,
 .comment-edit a {
   padding: 2px 6px;
-  border: 1px dashed #d1392b;
+  border: 1px dashed #01afb8;
   border-radius: 4px;
 }
 .comment-reply a:hover,
 .comment-delete a:hover,
 .comment-edit a:hover {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
 }
 .comment-delete,
@@ -1025,7 +1026,7 @@ ul.social-icons li a:hover {
   line-height: 44px;
 }
 .scrolltop:hover {
-  background: #d1392b;
+  background: #01afb8;
 }
 
 /*
@@ -1138,7 +1139,7 @@ ol.search-results li {
   width: 60px;
   height: 2px;
   margin-left: -30px;
-  background: #d1392b;
+  background: #01afb8;
 }
 
 /*

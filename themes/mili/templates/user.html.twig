@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set url = path('<current>') %} {# Se obtiene la ruta actual #}
+{% set partes = url|split('/') %} {# Se hace un split de la ruta anterior #}
+{% if partes[2] ==  'user' %}
+    <!-- Contenedor donde se pone la información escencial del usuario (foto de perfil, nacimiento y su CV) -->
+    <div class="cntPrincipalPerfil">
+      <!-- foto de perfil -->
+      <div class="usrImg">
+        <a href="{{ file_url(content.user_picture["#items"].entity.uri.value) }}" target="_blank">
+          <img src = "{{ file_url(content.user_picture["#items"].entity.uri.value) }}" class = "usrImgRaw">
+        </a>
+      </div>
+      <!-- Nombre del usuario -->
+      <h3 class="nombrePerfil"> {{user.displayname}} </h3>
+      <!-- Tipo de cuenta Persona Física/Negocio -->
+        <div class="cntNacimiento">
+          <span class="material-icons">work</span>
+          {{content.field_tipo_de_cuent.0}}
+        </div>
+      <!-- Si subió su CV -->
+      {% if content.field_cv["#items"].entity.uri.value is not empty %}
+        <div class="cntCV">
+          <div class="tooltip">
+            <a class="btnChido" href = {{ file_url(content.field_cv["#items"].entity.uri.value) }} target="_blank"><span class="material-icons">description</span></a>
+            <span class="tooltiptext">Curriculum</span>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+{% else %}
+    {{ content.user_picture }}
+{% endif %}
