@@ -10,6 +10,15 @@
 }
 /* Standard mobile phones */
 @media only screen and (max-width: 414px) {
+    #main, iframe, .empCntImagen{
+        width: 94vw;
+    }
+    .empImg{
+        width: 100% !important;
+    }
+    .main-wrapper{
+        overflow:hidden;
+    }
   /* Typohraphy */
   h1 {
     font-size: 1.8em;
@@ -262,16 +271,20 @@
   /* Footer */
   .footer-blocks {
     grid-auto-flow: row;
+    padding-left: 20px;
   }
   .copyright {
     text-align: center;
   }
+    #main-wrapper {
+      padding: 30px 10px;
+    }
 }
 /* iPad pro, Tablets
 ------------------------------------------------- */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .container {
-    width: 100%;
+    width: 97%;
     max-width: 1023px;
   }
 }

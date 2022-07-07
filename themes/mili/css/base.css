@@ -1,9 +1,19 @@
+@import 'styleOrderList.css'; 
+@import '404.css';
+@import 'contactFrontPage.css';
+@import 'mainPage.css';
+@import 'pager.css';
+@import 'comment.css';
+@import 'relatedContent.css';
+@import 'user.css';
+@import 'empleos.css';
+
 /**
  * Variables
  */
  :root {
-  --theme-color: #d1392b;
-  --theme-color-two: #841309;
+  --theme-color: #00ADB5;
+  --theme-color-two: #393E46;
   --body-bg: #fcfbf8;
   --sidebar-bg: #ffffff;
   --body-color: #404040;
@@ -84,16 +94,16 @@ h6 {
   margin: 0;
 }
 h1 {
-  font-size: 2.3em;
+  font-size: 2em;
 }
 h2 {
-  font-size: 2.1em;
+  font-size: 1.8em;
 }
 h3 {
-  font-size: 1.9em;
+  font-size: 1.6em;
 }
 h4 {
-  font-size: 1.7em;
+  font-size: 1.4em;
 }
 h5 {
   font-size: 1.2em;
@@ -109,7 +119,7 @@ p {
 
 /* Typography -> Links. */
 a {
-  color: #d1392b;
+  color: #272a49;
   background-color: transparent;
   text-decoration: none;
   -webkit-transition: color 0.4s ease;
@@ -118,7 +128,7 @@ a {
 }
 a:active,
 li a.active {
-  color: #d1392b;
+  color: #272a49;
 }
 a:hover,
 a:visited:hover {
@@ -156,7 +166,7 @@ strong {
 }
 em {
   font-style: normal;
-  color: #d1392b;
+  color: #272a49;
 }
 dfn,
 cite {
@@ -190,7 +200,7 @@ var {
   font-style: italic;
 }
 mark {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
   text-shadow: none;
 }
@@ -321,7 +331,7 @@ button,
   border-radius: 2px;
   -webkit-appearance: button;
   padding: 9px 10px;
-  background-color: #d1392b;
+  background-color: #01afb8;
   color: #fff;
   -webkit-transition: background-color 0.4s ease;
   -moz-transition: background-color 0.4s ease;
@@ -606,12 +616,12 @@ hr {
  * Misc.
  */
 ::selection {
-  background: #d1392b;
+  background: #334257;
   color: #fff;
   text-shadow: none;
 }
 ::-moz-selection {
-  background: #d1392b;
+  background: #01afb8;
   color: #fff;
   text-shadow: none;
 }
@@ -635,6 +645,7 @@ hr {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local('Poppins Regular'), local('Poppins-Regular'),
   url('../fonts/poppins.woff2') format('woff2'),
   url('../fonts/poppins.woff') format('woff');
@@ -651,7 +662,7 @@ hr {
     url('../fonts/milicon.svg?y9we43#milicon') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -779,3 +790,17 @@ hr {
   content: "\e909";
 }
 
+/* Ajustes varios */
+.material-icons.md-48 { font-size: 48px !important; }
+.contenidoHome { list-style: none !important; }
+a.footerEnlace{ color: white !important; }
+.page-header { padding: 7px 0 !important; }
+#main { max-width: 1170px !important;}
+.field__label { color: midnightblue !important; font-weight: bold !important; }
+.node-view-mode-teaser { margin-bottom: 0 !important; }
+.footer { background: var(--theme-color-two) !important; }
+.footer a { color: white !important; }
+h2.footerExplora { color: #EEEEEE !important; }
+.breadcrumb { text-shadow: none !important; }
+.textoPrivacidad { background: var(--border-color) !important;    color: black !important;    text-shadow: none !important;    padding: 20px !important; }
+.privacidadContenido {     padding: 20px !important; } 

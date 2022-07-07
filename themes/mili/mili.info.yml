@@ -1,7 +1,7 @@
 name: 'Mili x Ukua'
 type: theme
 base theme: stable
-description: 'Tema de Ukua, tomando como base el tema Mili' #Mili es un tema gratuito, entonces lo modificamos para nuestras necesidades
+description: 'Tema de Ukua, tomando como base el tema Mili' #El tema Mili es gratuito y nosotros simplemente decidimos modificarlo con respecto a nuestras necesidades
 package: Drupar
 core_version_requirement: ^8 || ^9
 # Comment version before uploading to drupal.org

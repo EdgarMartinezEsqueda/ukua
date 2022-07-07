@@ -58,7 +58,7 @@ libraries-override:
   layout_builder/fourcol_section: olivero/layout_builder_fourcol_section
 libraries-extend:
   core/drupal.message:
-    - olivero/messages
+    - olivero/drupal.message
   core/drupal.collapse:
     - olivero/details
   core/drupal.dialog:
@@ -91,7 +91,7 @@ ckeditor_stylesheets:
   - css/components/text-content.css
   - css/theme/ckeditor-frame.css
 
-# Information added by Drupal.org packaging script on 2022-01-05
-version: '9.3.2'
+# Information added by Drupal.org packaging script on 2022-06-21
+version: '9.4.1'
 project: 'drupal'
-datestamp: 1641351885
+datestamp: 1655845587

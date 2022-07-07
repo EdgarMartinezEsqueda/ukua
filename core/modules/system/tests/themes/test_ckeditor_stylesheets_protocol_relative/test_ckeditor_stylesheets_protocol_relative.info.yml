@@ -5,8 +5,10 @@ description: 'A theme that uses a protocol-relative CKEditor stylesheet.'
 base theme: false
 ckeditor_stylesheets:
   - //fonts.googleapis.com/css?family=Open+Sans
+ckeditor5-stylesheets:
+  - //fonts.googleapis.com/css?family=Open+Sans
 
-# Information added by Drupal.org packaging script on 2022-01-05
-version: '9.3.2'
+# Information added by Drupal.org packaging script on 2022-06-21
+version: '9.4.1'
 project: 'drupal'
-datestamp: 1641351885
+datestamp: 1655845587

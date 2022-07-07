@@ -79,12 +79,6 @@
   {% endif %}
 
   <div class="single-comment-content-body">
-    {% if title %}
-      {{ title_prefix }}
-      <h3{{ title_attributes.addClass('single-comment-title') }}>{{ title }}</h3>
-      {{ title_suffix }}
-    {% endif %}
-
     <div class="single-comment-meta">
       <span>{{ author }} {{ created }}</span>
       {% if parent %}
