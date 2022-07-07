@@ -19,6 +19,9 @@
     .main-wrapper{
         overflow:hidden;
     }
+    .cntBienvenida {
+    display: block;
+    }
   /* Typohraphy */
   h1 {
     font-size: 1.8em;

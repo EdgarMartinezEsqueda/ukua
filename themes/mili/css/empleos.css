@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 .empCntFlex{ display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
 .empCntFlex > * { padding: 15px; }
 .empCntFlex * { flex: 1 1 20em; }
 .empImg { width: 400px; margin: auto;}
 .empImg img { height: 100%; }
+=======
+.empCntFlex{ display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
+.empCntFlex > * { padding: 15px; }
+.empCntFlex * { flex: 1 1 20em; }
+.empImg { width: 400px; margin: auto;}
+.empImg img { height: 100%; }
+>>>>>>> 7c242536350365e1e5cee0cf010e687d6f9a575c
 .empPun pre { width: fit-content; }

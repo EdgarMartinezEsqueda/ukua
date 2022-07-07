@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
     Estilos para listas ordenadas
 */
@@ -52,4 +53,60 @@ ol.listaPublicaciones article:before {
     border-radius: 2em;
     transition: all .3s ease-out;
     color: white;
+=======
+/*
+    Estilos para listas ordenadas
+*/
+.item-list-contUsuario{
+    padding: 20px;
+}
+ol.listaPublicaciones {
+    counter-reset: li; 
+    list-style: none; 
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+}
+ol.listaPublicaciones > li {
+    box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05);
+}
+
+ol.listaPublicaciones article {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    color: #444;
+    text-decoration: none;
+    transition: .3s ease-out;
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 3rem;
+    position: relative;
+}
+
+ol.listaPublicaciones article:hover { background: #E9E4E0; }
+ol.listaPublicaciones article:hover:before { transform: rotate(360deg); }
+ol.listaPublicaciones article:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.6em;
+    background: linear-gradient(135deg, #548CA8 0%, #334257 100%);;
+    height: 3em;
+    width: 3em;
+    line-height: 2.5em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    color: white;
+>>>>>>> 7c242536350365e1e5cee0cf010e687d6f9a575c
 }

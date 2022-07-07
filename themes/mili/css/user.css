@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .usrImg{
     display: flex;
     justify-content: center;
@@ -107,3 +108,114 @@
     font-size: 28px;
     text-align: center;
 }
+=======
+.usrImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.usrImg a {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-top: -90px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.usrImgRaw{
+    border-radius: 50%;
+    z-index: 12;
+}
+.cntNacimiento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.cntNacimiento .field--name-field-nacimiento .field-item {
+    margin-left: 10px;
+    color: #727272;
+}
+
+.cntNacimiento .field--name-field-nacimiento .field__label {
+    display: none;
+}
+
+.cntPrincipalPerfil .cntCV {
+    width: 35%;
+    display: flex;
+    order: -1;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.cntPrincipalPerfil .btnChido {
+    margin-top: -27.5px;
+    background-color: #1E88E5 !important;
+    width: 55.5px;
+    display: flex;
+    height: 55.5px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+}
+
+.ctnPrincipalPerfil .btnChido span {
+    font-size: 26px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cntPrincipalPerfil .nombrePerfil {
+    color: #212121;
+    font-size: 28px;
+    text-align: center;
+}
+>>>>>>> 7c242536350365e1e5cee0cf010e687d6f9a575c
